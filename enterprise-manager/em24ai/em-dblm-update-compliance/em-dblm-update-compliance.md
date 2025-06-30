@@ -86,6 +86,7 @@ To setup patch recommendation, review [Oracle Enterprise Manager](https://docs.o
     - Green indicates the number of gold images that have all the recommended patches applied. These images are ready to be used for upgrade or update operations.
 
     - Red indicates the number of gold images missing critical recommended patches. These images must be refreshed before being used. Contact your Administrator to ensure the image is updated with all required patches.
+
     ![](images/tile2.png "hub-tile2")
 
     As an example, ***19cDB-Linux-x64-ERP*** gold image has two patch recommendations. This indicates ***19cDB-Linux-x64-ERP*** image must be refreshed to a new version that includes two recommended patches.
@@ -105,19 +106,16 @@ Follow the [Link](https://docs.oracle.com/en/enterprise-manager/cloud-control/en
 6. Let's refresh the gold image - ***19cDB-Linux-x64-ERP***
 
     As observed in step 4, ***19cDB-Linux-x64-ERP*** has two patch recommendations.
-
     ![](images/patch-recommendation.png "patch-recommendation")
 
     Click on the numeric value 2.
 
     A new slideout will appear, showing recommended patches that are missing from this image.
-
     ![](images/patch-slideout.png "slideout")
 
 7. The next step is to create a new version in 19cDB-Linux-x64-ERP that will include the recommended patches.
 
     Close the slideout.
-
     ![](images/create-version.png "create version")
 
     Click on the ***"Create New Version"*** link under the Patch Recommendation column.
