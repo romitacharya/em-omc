@@ -8,7 +8,7 @@ Learn how to secure and ensure compliance of your enterprise databases in this w
 
 ### Safeguard Database assets with Fleet Maintenance Hub
 
-***Fleet Maintenance Hub*** is a new, all-in-one User Interface (UI) for upgrading and updating Oracle Databases and Grid Infrastructure. It detects vulnerabilities and offers precise patch recommendations through an intelligent, and guided workflow. You can create a gold image with these recommended patches to secure your assets. Additionally, Fleet Maintenance Hub provides flexible scheduling options for near-zero downtime during upgrade and patching operations. After patching, it delivers compliance insights to help you assess alignment with your patching policies, enhancing your security posture.
+***Fleet Maintenance Hub*** is a unified user interface designed for upgrading and patching Oracle Databases and Grid Infrastructure. It automatically identifies vulnerabilities and provides targeted patch recommendations through an intelligent, guided workflow. Using these recommendations, you can create a gold image to secure and standardize your database environments. The Hub also supports flexible scheduling to help achieve near-zero downtime during maintenance. After patching, it offers compliance insights to evaluate how well your systems align with defined patching policies—strengthening your overall security posture.
 
 ### Securing Databases with Industry Standards and Best Practices
 ***Audit for Compliance*** - protecting your customer data is the most critical goal. Implement security controls that restrict access according to your policies, whether based on industry security standards or custom best practices. Achieve a comprehensive view of overall security compliance across all managed database targets to ensure these controls are effectively enforced and managed for compliance.
@@ -31,14 +31,14 @@ In this lab, you will perform the following steps:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-*Note*: This lab environment is setup with Enterprise Manager Cloud Control Release 13.5 and Database 19.10 as Oracle Management Repository. Workshop activities included in this lab will be executed both locally on the instance using Enterprise Manager Command Line Interface (EMCLI) or Rest APIs, and the Enterprise Manager console (browser)
+*Note*: This lab environment is pre-configured with Enterprise Manager Cloud Control Release 24ai and Oracle Database 19.26 as the Management Repository. You can perform the workshop activities using the Enterprise Manager Console (via browser), or locally through the Enterprise Manager Command Line Interface (EMCLI) and REST APIs.
 
 ## Task 1: Assess patch recommendation and create gold image
 
-In this task, you will review patch recommendations for existing gold images and create a new version based on those recommendations.
+In this task, you will use the Fleet Maintenance Hub to review patch recommendations for existing gold images and create a new version based on those recommendations.
 
 
-1. Login to Enterprise Manager as user - emadmin. Copy and paste or type in the following username and password credentials into the fields.
+1. Log in to Enterprise Manager using the emadmin user account. Enter the provided username and password into the respective fields, either by typing them manually or copying and pasting.
 
 
     ```
@@ -51,7 +51,11 @@ In this task, you will review patch recommendations for existing gold images and
 
    ![](images/em-login.png "em-login")
 
-2. Once logged in, navigate to ***Targets >> Databases***  
+2. Once logged in, click on hamburger icon on your top left screen.
+
+    ![](images/em-hamburger.png "em-hamburger")
+
+    From the menu items, navigate to ***Targets >> Databases***  
 
     ![](images/em-navig1.png "em-navig1")
 
@@ -77,10 +81,11 @@ To setup patch recommendation, review [Oracle Enterprise Manager](https://docs.o
 
 4. Click on Tile 2 in labeled as Patch Recommendations for Images.
 
-    The donut chart in this tile indicates the health of your gold images. Green indicates, the number of gold images have all the recommended patches, and these images can be used for upgrade or update operations.
+    The donut chart in this tile represents the health of your gold images.
 
-    Red indicates, the number of gold images are missing critical recommended patches and must refreshed before using it for upgrade or update operations. You should reach out your Administrator to refresh the image with all recommended patches.
+    - Green indicates the number of gold images that have all the recommended patches applied. These images are ready to be used for upgrade or update operations.
 
+    - Red indicates the number of gold images missing critical recommended patches. These images must be refreshed before being used. Contact your Administrator to ensure the image is updated with all required patches.
     ![](images/tile2.png "hub-tile2")
 
     As an example, ***19cDB-Linux-x64-ERP*** gold image has two patch recommendations. This indicates ***19cDB-Linux-x64-ERP*** image must be refreshed to a new version that includes two recommended patches.
@@ -105,7 +110,7 @@ Follow the [Link](https://docs.oracle.com/en/enterprise-manager/cloud-control/en
 
     Click on the numeric value 2.
 
-    A new slideout will appear.
+    A new slideout will appear, showing recommended patches that are missing from this image.
 
     ![](images/patch-slideout.png "slideout")
 
@@ -138,7 +143,7 @@ Follow the [Link](https://docs.oracle.com/en/enterprise-manager/cloud-control/en
         For Privileged Host credentials, from the drop down select ***ROOT***.
 
     In the right hand section, provide
-    - New version name that we are creating. You may enter ***v19.23DBRU***
+    - New version name that we are creating. You may enter ***v19.27DBRU***
     - Select Storage options. This will determine the source and location where the new version will be saved. We will select the default values as shown in the image.
 
 
@@ -169,17 +174,17 @@ Follow the [Link](https://docs.oracle.com/en/enterprise-manager/cloud-control/en
 
 In this task, we will perform Pluggable Database patching.
 
-1. Lets navigate to Databases Homepage, by clicking on ***Targets >> Databases***.
+1. Lets navigate to Databases Homepage. Click on hamburger icon on your top left and then clicking on ***Targets >> Databases***.
 
    ![](images/em-navig11.png "em-navig1")
 
-    You see ***Finance PDB*** under sales.subnet.vcn.oraclevcn.com CDB is at 19.17 version level. You will patch this to version 19.23. As part of this update, you need to choose a CDB at 19.23 version level. For this lab, we will use ***hr.subnet.vcn.oraclevcn.com***. After update is completed, Finance PDB will reside in this new CDB at 19.23 version level.
+    You see ***HRPDB*** under hr.subnet.vcn.oraclevcn.com CDB is at 19.23 version level. You will patch this to version 19.27. As part of this update, you need to choose a CDB at 19.27 version level. For this lab, we will use ***sales.subnet.vcn.oraclevcn.com***. After update is completed, HRPDB will reside in this new CDB at 19.27 version level.
 
     ![](images/pre-update.png "pre-update")
 
     Lets complete below steps to perform the pdb patching.
 
-2. Subscribe sales CDB to goldimage ***19cDB-Linux-x64-APPS***.
+2. Subscribe HR CDB to goldimage ***19cDB-Linux-x64-APPS***.
 
     Navigate to Fleet Maintenance Hub, by clicking on ***Administration >> Fleet Maintenance Hub***
 
@@ -192,10 +197,10 @@ In this task, we will perform Pluggable Database patching.
     - Click on the ***Subscribe*** button.
     - Select filter ***19*** under Release.
     - From the dropdown, select the goldimage - ***19cDB-Linux-x64-APPS***.
-    - From the list of databases, select ***sales.subnet.vcn.oraclevcn.com***.
+    - From the list of databases, select ***hr.subnet.vcn.oraclevcn.com***.
     - Click on ***Subscribe*** at the top right corner.
 
-    ![](images/sales-subscribe.png "subscribe")
+    ![](images/hr-subscribe.png "subscribe")
 
     Upon completion, click on ***Close***.
 
@@ -203,7 +208,7 @@ In this task, we will perform Pluggable Database patching.
 
     ![](images/tile3.png "tile3")
 
-    In tile 3, we see that the sales CDB is associated with goldimage ***19cDB-Linux-x64-APPS***.
+    In tile 3, we see that the HRCDB is associated with goldimage ***19cDB-Linux-x64-APPS***.
     Under Target Compliance columns, we see that the CDB is drifted and needs to be patched. In this lab, we will perform a PDB level patching.
 
     Click on the menu under Actions for the sales CDB, and select ***Update Pluggable Database***. This will launch the operator UI of Fleet Maintenance.
@@ -212,7 +217,7 @@ In this task, we will perform Pluggable Database patching.
 
     ![](images/patching-ui1.png "patching-ui1")
 
-    Select Finance pdb and click ***Next***.
+    Select HRPDB and click ***Next***.
 
 5. In this page, we will select relevant options and enter values wherever required.
 
@@ -230,21 +235,31 @@ In this task, we will perform Pluggable Database patching.
 
     Click ***Next***.
 
-6. Click on ***Validate*** and then select ***Quick Validation***.
+6. Click on ***Validate***
 
     ![](images/patching-ui3.png "patching-ui3")
 
-    Once you receive the successful validation message, click ***Close*** and then hit ***Submit***.
-
-7. A new dialogue box will ask for the name of the deployment procedure.
-    This unique name will allow you to track the operation. We have provided the name "Demo_update".
+    and then select ***Quick Validation***.
 
     ![](images/patching-ui4.png "patching-ui4")
+
+    Once you receive the successful validation message, click ***Close***
+
+    ![](images/patching-ui5.png "patching-ui5")
+
+    and then hit ***Submit***.
+
+    ![](images/patching-ui6.png "patching-ui6")
+
+7. A new dialogue box will ask for the name of the deployment procedure.
+    This unique name will allow you to track the operation. We have provided the name "HR-pdb-patch".
+
+    ![](images/patching-ui7.png "patching-ui7")
 
     Copy and paste or type in the following into the Submission Procedure Name prefix.
 
         ```
-        <copy>Demo_update</copy>
+        <copy>HR-pdb-patch</copy>
         ```
 
 8. There are two Deployment Procedure submitted.
@@ -253,9 +268,9 @@ In this task, we will perform Pluggable Database patching.
 
     Click on ***Monitor Progress***, which will open a new window.
 
-    ![](images/patching-ui5.png "patching-ui5")
+    ![](images/patching-ui8.png "patching-ui8")
 
-9. In the new page, under search, enter ***Demo*** so that you only see the two Deployment procedures associated with this lab.
+9. In the new page, under search, enter ***HR-pdb*** so that you only see the two Deployment procedures associated with this lab.
 
     ![](images/patching-ui6.png "patching-ui6")
 
@@ -266,7 +281,7 @@ In this task, we will perform Pluggable Database patching.
     ![](images/patching-ui7.png "patching-ui7")
 
 9. With both Deployment procedures completed successfully, let's go back to the databases homepage by navigating to ***Targets -> Databases***.
-    ![](images/patching-ui8.png "patching-ui8")
+    ![](images/post-pdb-patching.png "post pdb patch")
 
     We see that the Finance PDB has moved out of the sales CDB and is now plugged into the HR CDB, running at version 19.23
 
