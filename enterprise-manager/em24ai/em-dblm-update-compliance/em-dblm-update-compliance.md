@@ -173,7 +173,6 @@ Follow the [Link](https://docs.oracle.com/en/enterprise-manager/cloud-control/en
 In this task, we will perform Pluggable Database patching.
 
 1. Lets navigate to Databases Homepage. Click on hamburger icon on your top left and then clicking on ***Targets >> Databases***.
-
    ![](images/em-navig11.png "em-navig1")
 
     You see ***HRPDB*** under hr.subnet.vcn.oraclevcn.com CDB is at 19.23 version level. You will patch this to version 19.27. As part of this update, you need to choose a CDB at 19.27 version level. For this lab, we will use ***sales.subnet.vcn.oraclevcn.com***. After update is completed, HRPDB will reside in this new CDB at 19.27 version level.
@@ -220,8 +219,8 @@ In this task, we will perform Pluggable Database patching.
 5. In this page, we will select relevant options and enter values wherever required.
 
     - Under Maintenance Task, select ***Attach Existing CDB***.
-    - Under Attach Existing CDB, review the source CDB, which is ***sales.subnet.vcn.oraclevcn.com*** (19.17).
-    - Under Destination CDB, select ***hr.subnet.vcn.oraclevcn.com*** (19.23).
+    - Under Attach Existing CDB, review the source CDB, which is ***hr.subnet.vcn.oraclevcn.com*** (19.23).
+    - Under Destination CDB, select ***sales.subnet.vcn.oraclevcn.com*** (19.27).
     - Under credentials, select values from the drop-down menu as per the image.
         - Normal Host Credentials as ***ORACLE***
         - Privileged Host Credentials as ***ROOT***
@@ -281,7 +280,7 @@ In this task, we will perform Pluggable Database patching.
 9. With both Deployment procedures completed successfully, let's go back to the databases homepage by navigating to ***Targets -> Databases***.
     ![](images/post-pdb-patching.png "post pdb patch")
 
-    We see that the Finance PDB has moved out of the sales CDB and is now plugged into the HR CDB, running at version 19.23
+    We see that the HRPDB has moved out of the HR CDB and is now plugged into the Sales CDB, running at version 19.27
 
 
 ## Task 3: Securing Databases with Industry Standards and Best Practices
