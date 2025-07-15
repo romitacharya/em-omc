@@ -281,6 +281,20 @@ In this task, we will perform Pluggable Database patching.
 
     We see that the HRPDB has moved out of the HR CDB and is now plugged into the Sales CDB, running at version 19.27
 
+10. A new feature that has been introduced with EM24ai Ru03 is audit report for lifecycle activities(LCM). You can now download a report for targets that will list out the activities (such as update and upgrade).
+
+    From Fleet Maintenance Hub, click on the highlighted icon to launch the LCM page.
+    ![](images/LCM-Homepage.png "LCM-Homepage")
+
+    In the new page, you will see a default report for the activities performed in the past on the targets.
+    ![](images/LCM-2.png "LCM-report")
+
+    You can select the individual tasks from the dropdown menu. Also, there are other filters that you may choose to build a report.
+    ![](images/LCM-3.png "LCM-report")
+
+    You can also download the report in excel format. Below is how the file will look like.
+    ![](images/LCM-4.png "LCM-report")
+
 ## Task 3: Securing Databases with Industry Standards and Best Practices
 
 Now that you have applied security patches to your pluggable database, you want to ensure the configuration, access and user privileges are secure and audit for compliance with CIS Benchmarks which is the industry standard.
