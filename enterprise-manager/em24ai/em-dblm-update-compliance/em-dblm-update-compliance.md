@@ -148,7 +148,6 @@ Follow the [Link](https://docs.oracle.com/en/enterprise-manager/cloud-control/en
     Click ***Next***.
 
 9. In this screen, select the two patches that we have already downloaded and uploaded in the software library.
-
     ![](images/rec-patches.png "rec-patches")
 
     Click ***Next***.
@@ -282,36 +281,35 @@ In this task, we will perform Pluggable Database patching.
 
     We see that the HRPDB has moved out of the HR CDB and is now plugged into the Sales CDB, running at version 19.27
 
+## Task 3: Securing Databases with Industry Standards and Best Practices
 
-    ## Task 3: Securing Databases with Industry Standards and Best Practices
+Now that you have applied security patches to your pluggable database, you want to ensure the configuration, access and user privileges are secure and audit for compliance with CIS Benchmarks which is the industry standard.
 
-    Now that you have applied security patches to your pluggable database, you want to ensure the configuration, access and user privileges are secure and audit for compliance with CIS Benchmarks which is the industry standard.
-
-    Enterprise Manager provides solution to secure and ensure compliance with security policies defined by your security office and auditors. With this solution, you can secure the entire stack from databases, underlying Linux hosts and Exadata infrastructure with out-of-box security controls.  
-
+Enterprise Manager provides solution to secure and ensure compliance with security policies defined by your security office and auditors. With this solution, you can secure the entire stack from databases, underlying Linux hosts and Exadata infrastructure with out-of-box security controls.  
     ![compliance stack](images/stack-security-compliance.png " ")
 
-    For Oracle Databases 12c and 19c, CIS Benchmark is an industry compliance standards that is available out-of-the-box. Besides that, Department of Defense (DoD) Security Technical Implementation Guide (STIG) standard is available out-of-the-box for regulatory requirements.
+For Oracle Databases 12c and 19c, CIS Benchmark is an industry compliance standards that is available out-of-the-box. Besides that, Department of Defense (DoD) Security Technical Implementation Guide (STIG) standard is available out-of-the-box for regulatory requirements.
 
-    Leverage the built-in SCAP engine on Linux hosts to meet security standards like STIG, PCI-DSS, and HIPAA.
+Leverage the built-in SCAP engine on Linux hosts to meet security standards like STIG, PCI-DSS, and HIPAA.
 
-    Finally, for Exadata family of Engineered Systems, compliance standards tied to Autonomous Health Framework (AHF) Exachk is available out-of-box.
+Finally, for Exadata family of Engineered Systems, compliance standards tied to Autonomous Health Framework (AHF) Exachk is available out-of-box.
 
-    In this lab, you will get hands-on experience with ***Oracle 19c Database CIS V1.2.0 - Level 1 - RDBMS using Unified Auditing for Oracle Pluggable Database*** to secure configuration of database.
+In this lab, you will get hands-on experience with ***Oracle 19c Database CIS V1.2.0 - Level 1 - RDBMS using Unified Auditing for Oracle Pluggable Database*** to secure configuration of database.
 
-    Center for Internet Security (CIS) benchmark for Oracle database provides comprehensive set of security controls, and configuration guidelines to secure against cyber threats and data breaches. It enables in keeping your databases security posture at elevated levels and check for compliance with your auditors.
+Center for Internet Security (CIS) benchmark for Oracle database provides comprehensive set of security controls, and configuration guidelines to secure against cyber threats and data breaches. It enables in keeping your databases security posture at elevated levels and check for compliance with your auditors.
 
-    Lets start the lab.
+Lets start the lab.
 
-    To begin, lets take a look at available CIS Benchmarks and choose one of them for associating a database target for security assessment.
+To begin, lets take a look at available CIS Benchmarks and choose one of them for associating a database target for security assessment.
 
-    1. From the Enterprise menu, select **Compliance Standards**.
+
+  1. From the Enterprise menu, select **Compliance Standards**.
 
         ![Navigate to Library](images/enterprise-compliance.png " ")
 
-    2. Click the **Dashboards -> Libraray**.
+  2. Click the **Dashboards -> Libraray**.
 
-         ![Navigate to Library](images/enterprise-compliance-library.png " ")
+       ![Navigate to Library](images/enterprise-compliance-library.png " ")
 
         You will list of out-of-box Compliance Standards. Lets' look for CIS Benchmarks.
 
@@ -327,7 +325,7 @@ In this task, we will perform Pluggable Database patching.
 
         Click **Associate Targets**.
 
-        ![Target associate](images/cis-compliance-associate-target.png " ")
+       ![Target associate](images/cis-compliance-associate-target.png " ")
 
     3. Click **Add** and Select **sales.subnet.vcn.oraclevcn.com_HRPDB** PDB you wish to associate.
 
@@ -635,9 +633,9 @@ In this task, we will perform Pluggable Database patching.
 
         Click on ***Setup >> Log Out***  
 
-    That completes the Database Patching and Compliance lab.
 
-    You may now proceed to the next lab.
+That completes the Database Patching and Compliance lab.
+You may now proceed to the next lab.
 
 ## Learn More
   - [Oracle Enterprise Manager](https://www.oracle.com/enterprise-manager/)
@@ -652,4 +650,4 @@ In this task, we will perform Pluggable Database patching.
   - **Authors**
     - Romit Acharya, Oracle Enterprise Manager Product Management
     - Shiva Prasad, Oracle Enterprise Manager Product Management
-  - **Last Updated By/Date** -Romit Acharya, Oracle Enterprise Manager Product Management, July 2024
+  - **Last Updated By/Date** -Romit Acharya, Oracle Enterprise Manager Product Management, July 2025
