@@ -327,7 +327,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
        ![Target associate](images/cis-compliance-associate-target.png " ")
 
-    3. Click **Add** and Select **sales.subnet.vcn.oraclevcn.com_HRPDB** PDB you wish to associate.
+  3. Click **Add** and Select **sales.subnet.vcn.oraclevcn.com_HRPDB** PDB you wish to associate.
 
         In the **Target name**, type **_HRPDB** and click **Search**.
 
@@ -339,7 +339,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         ![Add PDB](images/select-cis-pdb-target.png " ")
 
-    4. Verify the PDB selected and click **OK**.
+  4. Verify the PDB selected and click **OK**.
 
         ![Enable CIS](images/enable-status-pdb.png " ")
 
@@ -347,11 +347,11 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         ![Confirm Association ](images/save-association-pdb.png "")
 
-    5. Click **OK** on the Information pop-up window.
+  5. Click **OK** on the Information pop-up window.
 
         ![Confirm Association ](images/compliance-std-target-process.png " ")
 
-    6. Compliance Results Analysis
+  6. Compliance Results Analysis
 
         You have completed one-time setup process.
 
@@ -381,7 +381,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         **Compliance Summary:** Provides an overview of Targets Compliance status, key metrics about violations, average compliance scores, and comprehensive Report, facilitating targeted efforts to meet compliance standards.
 
-    7. At the bottom of the page, you will see Compliance Summary section.
+  7. At the bottom of the page, you will see Compliance Summary section.
 
         Click on Standards tab to see the results of CIS Benchmark assessment.
 
@@ -399,7 +399,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
        Click on 'x' to close.
 
-    8. Let us analyze the severity
+  8. Let us analyze the severity
 
         Click on **Critical** number, you will see unique violations for this target.
 
@@ -425,7 +425,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         Similarly, we can explore Warning and Minor Warning violations if they exist.
 
-    9. Let us drill down to results.
+  9. Let us drill down to results.
 
         Click on **Standards >> Name** and let us remediate one of the solution.
 
@@ -451,7 +451,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         Let us click on Violations number.
 
-    10. In the **Violations** window, you will find failed Compliance Standard rule description along with the Violation Count.
+  10. In the **Violations** window, you will find failed Compliance Standard rule description along with the Violation Count.
 
         ![Validate CIS ](images/cis-compliance-rule-violation-count.png " ")
 
@@ -467,7 +467,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         Click on 'Close'
 
-    11. Let us select **Violations** tab.
+  11. Let us select **Violations** tab.
 
         This table provides comprehensive details for each rule, target name, applicable pluggable database, and violation severity with keywords.
 
@@ -479,7 +479,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         ![Summary CIS ](images/cis-summary.png " ")
 
-    12. Click on caret-right ![Caret-right](images/cis-caret-search.png " ") icon.
+  12. Click on caret-right ![Caret-right](images/cis-caret-search.png " ") icon.
 
         Explore each main category controls' **Violations**.
 
@@ -491,7 +491,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         ![Check for violations](images/cis-rule-violation.png " ")
 
-    13. You will notice that the "Unauthorized user 'IX' has been assigned the DBA role".
+  13. You will notice that the "Unauthorized user 'IX' has been assigned the DBA role".
 
         The Oracle DBA role grants powerful administrative privileges for configuration changes and access to sensitive information. 'IX' should not have this role.
 
@@ -499,13 +499,13 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         Click **Close**.
 
-    14. Click on the **Rule Details** tab.
+  14. Click on the **Rule Details** tab.
 
         You will find detailed rule information including severity and recommended remediation.
 
         ![Check for violations](images/cis-rule-details.png " ")
 
-    15. Click on the **Violation Events** tab.
+  15. Click on the **Violation Events** tab.
 
         This will provide you essential information about violation details about user, who has a elevated DBA privilege, which should be revoked.
 
@@ -513,7 +513,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         To access the table row section, click on it.
 
-    16. You will find **Event details** on violated rule information, violation details, and a guided resolution option for recommendations.
+  16. You will find **Event details** on violated rule information, violation details, and a guided resolution option for recommendations.
 
         ![Event Details](images/cis-event-details-violation.png  " ")
 
@@ -525,29 +525,29 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         Don't forget to select the row labeled **CORRECTIVE\_ACTION\_REVOKE\_DBA\_ROLE\_PRIVILEGE**.
 
-    17. You will find the **Database Credentials** and **Host Credentials**.
+  17. You will find the **Database Credentials** and **Host Credentials**.
 
         ![Event Details](images/preferred-credentials-selection.png  " ")
 
         Remember to choose **Preferred** for both credentials and then click **Submit**.
 
-    18. You will be presented with a pop-up window for  **Corrective action**.
+  18. You will be presented with a pop-up window for  **Corrective action**.
 
         ![Event Details](images/corrective-action-submitt.png " ")
 
         Click to view execution details.  
 
-    19. You will notice that the DBA role job was successfully revoked upon refreshing the icon![Refresh](images/refresh-icon.png "  ")  in Jobs page.
+  19. You will notice that the DBA role job was successfully revoked upon refreshing the icon![Refresh](images/refresh-icon.png "  ")  in Jobs page.
 
         ![Event Details](images/dba_grantee_revoke_job.png  " ")
 
-    20. You will view the remediated status for the pluggable database.
+  20. You will view the remediated status for the pluggable database.
 
         Now, Navigate to ***Targets >> Databases***.
 
         ![Navigate to result](images/target-databases.png  " ")
 
-    21. You will see the **sales.subnet.vcn.oraclevcn.com_HRPDB** PDB in the Name.
+  21. You will see the **sales.subnet.vcn.oraclevcn.com_HRPDB** PDB in the Name.
 
         ![Navigate to result](images/select-pluggable-pdb.png  " ")
 
@@ -555,7 +555,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         ![Navigate to result](images/dbs-pdb-page.png " ")
 
-    22. Now, Click on ***Oracle Database >> Configuration >> Latest***.
+  22. Now, Click on ***Oracle Database >> Configuration >> Latest***.
 
         ![Navigate to result](images/db-configuration-latest.png  " ")
 
@@ -577,21 +577,21 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         ![Latest Configuration](images/pdb-latest-configuration-refresh.png  " ")
 
-    23. **Processing** will take about "few minutes" to complete and get refreshed.
+  23. **Processing** will take about "few minutes" to complete and get refreshed.
 
         ![Latest Configuration](images/configuration-refresh-pdb.png  " ")
 
-    24. Now, Navigate to ***Oracle Database >> Compliance >> Results***.
+  24. Now, Navigate to ***Oracle Database >> Compliance >> Results***.
 
         ![Latest Configuration](images/cis-compliance-violation-results.png  " ")
 
-    25. You will be directed to the **Compliance Results** page, where you will notice a reduction in violations from 83 to 82
+  25. You will be directed to the **Compliance Results** page, where you will notice a reduction in violations from 83 to 82
 
         ![Compliance Results](images/cis-compliance-violation-results-summary.png " ")
 
         Click on Compliance Standards **Oracle 19c Database CIS 1.2.0** Results.
 
-    26. You will see the details of the **Compliance Standards Results**.
+  26. You will see the details of the **Compliance Standards Results**.
 
         Verify the selected violation: **Ensure that 'DBA' is revoked from unauthorized 'GRANTEE'**.
 
@@ -607,7 +607,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         Thus, Ensure 'DBA' Is Revoked from Unauthorized 'GRANTEE' " (Compliance Standard Rule) violation have been successfully remediated through corrective action.
 
-    27. Now, Navigate to ***Enterprise >> Compliance Standards***
+  27. Now, Navigate to ***Enterprise >> Compliance Standards***
 
         ![Compliance Results](images/compilance-dashboard-option.png  " ")
 
@@ -615,7 +615,7 @@ To begin, lets take a look at available CIS Benchmarks and choose one of them fo
 
         ![Compliance Dashboard](images/compliance-dashboard-counts.png " ")
 
-    28. Click on **Report** to generate a comprehensive compliance report for CIS compliance standards and its associated pluggable database targets.
+  28. Click on **Report** to generate a comprehensive compliance report for CIS compliance standards and its associated pluggable database targets.
 
         ![Compliance Report](images/cis-standard-detaiil-report1.png  " ")
 
